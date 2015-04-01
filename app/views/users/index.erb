@@ -1,0 +1,24 @@
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<h1>Welcome, <%= @cur_user.username%> </h1>
+
+<% @user_list.each do |user| %>
+  <div class="main-collections">
+    <h2><%= user.username %>'s Collection</h2>
+    <ul>
+      <% (user.records).each do |record| %>
+        <li>
+          <a href="#"><%= record.albumtitle %> by <i><%= record.artist %></i></a> 
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
