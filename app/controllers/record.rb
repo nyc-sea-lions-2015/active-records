@@ -35,17 +35,12 @@ end
 #-------------- EDIT RECORD
 get '/records/:id/edit' do
   @record = Record.find_by(id:params[:id])
-
-
   erb :'/records/edit'
 end
 
 put '/records/:id/edit' do
-  p "PARAMS #{params}----------------------------------------------------------"
   edit_record = Record.find_by(id:params[:id])
-
   edit_record.update_attributes(params[:record])
-
 
 
   if edit_record.save!
