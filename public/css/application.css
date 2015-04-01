@@ -32,6 +32,13 @@ li a:hover{
   color: #ff6600;
 }
 
+#title{
+  padding-left: 30px;
+  color: #66CC99;
+  display: inline;
+  font-size: 2.5em;
+}
+
 #container{
   border:1px solid #000000;
   padding:75px;
