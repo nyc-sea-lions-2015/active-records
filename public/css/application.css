@@ -1,6 +1,7 @@
 body{
   font-family: 'Source Code Pro', sans-serif;
   margin: 0px auto;
+  background-image: url("/imgs/record_player.jpg");
 }
 
 
@@ -41,6 +42,7 @@ li a:hover{
 
 #container{
   border:1px solid #000000;
+  background-color: #FFFFFF;
   padding:75px;
   width: 75%;
   margin: auto;
@@ -55,3 +57,10 @@ li a:hover{
 #container a:hover{
   color: #ff6600;
 }
+
+/*.welcome{
+  margin:auto;
+  font-size: 8em;
+  color:#FFFFFF;
+}*/
+

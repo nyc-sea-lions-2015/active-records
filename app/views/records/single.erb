@@ -14,8 +14,10 @@
       Track List:
 
       <% if cur_user.username == @owner %>
-         <button>
-           <a href="/records/<%= @record.id %>/tracks/new" class="add-track-btn">add a track</a>
+         <button class="add-track-btn">
+           <a href="/records/<%= @record.id %>/tracks/new" >
+            add a track
+           </a>
          </button>
       <% end %>
 
