@@ -1,0 +1,45 @@
+body{
+  font-family: 'Source Code Pro', sans-serif;
+  margin: 0px auto;
+}
+
+
+header{
+  background-color: #000000;
+  position: fixed;
+  color: #FFFFFF;
+  height: 55px;
+  width: 100%;
+  margin-top: 0px;
+  z-index: 5;
+}
+
+nav{
+  float: right;
+  padding-right: 25px;
+}
+
+nav ul li{
+  display: inline;
+}
+
+li a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li a:hover{
+  color: #ff6600;
+}
+
+#container{
+  border:1px solid #000000;
+  padding:75px;
+  width: 75%;
+  margin: auto;
+  color:#000000;
+}
+
+.main-collections a{
+  color: #000000;
+}
