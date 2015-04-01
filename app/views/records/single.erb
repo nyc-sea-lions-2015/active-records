@@ -10,6 +10,14 @@
   <p>Album Artist: <%= @record.artist %></p> 
   <p>Album Genre: <%= @record.genre %></p> 
   <p>Released: <%= @record.releaseyear %></p>
+
+  <ol>
+    <p>Track List: </p>
+    <% @tracks.each do |track| %>
+      <li><%= track.title %></li>
+    <% end %>
+  </ol>
+
   <p>
     <%= @owner %>'s' opinon on this record:<br>
     <%= @record.owneropinion %>
@@ -20,10 +28,24 @@
 
 <div class='record-comments'>
   <h2>Comments</h2>
+  <% if cur_user %>
+    <button>
+      <a href="/records/<%= @record.id %>/comments/new" class="add-comment-btn">Add a comment</a>
+    </button>
+   <% end %> 
+
+
   <% @comments.each do |comment| %>
   <p>
     <%= comment.body %>
-    <br> - From: <%= comment.find_author(comment.user_id) %><br>
+    <br> - From: <%= comment.find_author(comment.user_id) %>
+    <% if cur_user.username == comment.find_author(comment.user_id) %>
+       <button>
+         <a href="/comments/<%= comment.id %>/edit" class="add-comment-btn">Edit this comment</a>
+       </button>
+    <% end %>
+    <br>
   </p> 
   <% end %>
+
 </div>

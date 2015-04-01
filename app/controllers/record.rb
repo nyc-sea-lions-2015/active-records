@@ -21,6 +21,8 @@ end
 get '/records/:id' do
   @record = Record.find_by(id:params[:id])
 
+  @tracks = @record.tracks
+
   owner_id = @record.user_id
   @owner = User.find_by(id:owner_id).username
 
