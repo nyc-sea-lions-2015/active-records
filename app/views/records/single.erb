@@ -22,6 +22,13 @@
     <%= @owner %>'s' opinon on this record:<br>
     <%= @record.owneropinion %>
   </p> 
+
+  <% if cur_user.username == @owner %>
+     <button>
+       <a href="/records/<%= @record.id %>/edit" class="edit-record-btn">Edit this record</a>
+     </button>
+  <% end %>
+
 </div>
 
 <hr>
