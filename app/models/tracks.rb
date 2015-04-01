@@ -1,3 +1,3 @@
 class Tracks < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :record
 end
