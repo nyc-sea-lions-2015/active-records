@@ -40,6 +40,11 @@ li a:hover{
   color:#000000;
 }
 
-.main-collections a{
+#container a{
   color: #000000;
+  text-decoration: none;
+}
+
+#container a:hover{
+  color: #ff6600;
 }
