@@ -33,3 +33,21 @@ put '/comments/:id/edit' do
     [403, 'error']
   end
 end
+
+#-------- DELETE COMMENT
+
+get '/comments/:id/delete' do
+  @cur_comment = Comment.find_by(id:params[:id])
+  erb :'/comments/delete'
+end
+
+delete '/comments/:id/delete' do
+  delete_comment = Comment.find_by(id:params[:id])
+  record_id = delete_comment.record_id
+
+  if delete_comment.destroy!
+    redirect "/records/#{record_id}"
+  else
+    [403, 'error']
+  end
+end

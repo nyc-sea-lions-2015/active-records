@@ -37,12 +37,18 @@
 
   <% @comments.each do |comment| %>
   <p>
+    <%= comment.find_author(comment.user_id) %> says...<br>
     <%= comment.body %>
-    <br> - From: <%= comment.find_author(comment.user_id) %>
+    <br>
     <% if cur_user.username == comment.find_author(comment.user_id) %>
        <button>
-         <a href="/comments/<%= comment.id %>/edit" class="add-comment-btn">Edit this comment</a>
+         <a href="/comments/<%= comment.id %>/edit" class="edit-comment-btn">Edit comment</a>
        </button>
+
+       <button>
+         <a href="/comments/<%= comment.id %>/delete" class="delete-comment-btn">Delete comment</a>
+       </button>
+
     <% end %>
     <br>
   </p> 

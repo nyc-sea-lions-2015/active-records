@@ -1,0 +1,14 @@
+
+<div class="delete-confirmation">
+  <h1>Delete Confirmation</h1>
+  <p>
+    Are you sure you want to delete the comment, <%= @cur_comment.find_author(@cur_comment.user_id) %> ?<br>
+    "<i><%= @cur_comment.body %></i>""
+  </p>
+
+  <form action="/comments/<%= @cur_comment.id %>/delete" method="POST" id="record-add-form">
+    <input type="hidden" name="_method" value="DELETE">
+
+    <input class="form-add-btn" type='submit' value='Confirm Delete'>
+  </form>
+</div>
