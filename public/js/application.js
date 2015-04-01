@@ -1,7 +1,41 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#track-list').on('click', '.add-track-btn', function(){
+    event.preventDefault();
+
+    $target = $(event.target);
+
+    $.ajax({url: $target.attr('href'),
+            method: 'get',
+            dataType: 'html'
+    }).done(function(response){
+      console.log(response)
+      $('#track-list').append(response); 
+    });
+  });
+
+  $('#track-list').on('submit', function(){
+    event.preventDefault();
+    $target = $(event.target);
+
+    $.ajax({url: $target.attr('action'),
+            method: 'POST',
+            data : $target.serialize(),
+            dataType: 'json'
+    }).done(function(response){
+      $('#all-tracks').append('<li>'+ response.title + '</li>'); 
+      $('.tracks-add-form').remove();
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
 });
