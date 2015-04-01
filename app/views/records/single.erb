@@ -1,0 +1,29 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class='record-info'>
+  <h2>Album Info</h2>
+  <p>Album Title: <%= @record.albumtitle %></p> 
+  <p>Album Artist: <%= @record.artist %></p> 
+  <p>Album Genre: <%= @record.genre %></p> 
+  <p>Released: <%= @record.releaseyear %></p>
+  <p>
+    <%= @owner %>'s' opinon on this record:<br>
+    <%= @record.owneropinion %>
+  </p> 
+</div>
+
+<hr>
+
+<div class='record-comments'>
+  <h2>Comments</h2>
+  <% @comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+    <br> - From: <%= comment.find_author(comment.user_id) %><br>
+  </p> 
+  <% end %>
+</div>

@@ -14,7 +14,7 @@
     <ul>
       <% (user.records).each do |record| %>
         <li>
-          <a href="#"><%= record.albumtitle %> by <i><%= record.artist %></i></a> 
+          <a href="/records/<%= record.id %>"><%= record.albumtitle %> by <i><%= record.artist %></i></a> 
         </li>
       <% end %>
     </ul>
