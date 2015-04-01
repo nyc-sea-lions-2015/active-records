@@ -1,0 +1,7 @@
+<form action="/comments/<%= @cur_comment.id %>/edit" method="POST" id="record-add-form">
+  <input type="hidden" name="_method" value="PUT">
+
+  <input type="text" name="body" value="<%= @cur_comment.body %>"><br><br>
+
+  <input class="form-add-btn" type='submit' value='Edit Comment'>
+</form>

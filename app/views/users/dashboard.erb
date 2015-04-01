@@ -1,0 +1,14 @@
+
+
+  <div class="my-collections">
+    <h2>My Collection</h2>
+      <% (cur_user.records).each do |record| %>
+        <p>
+          <a href="/records/<%= record.id %>"><%= record.albumtitle %> by <i><%= record.artist %></i></a> 
+        </p>
+      <% end %>
+
+    <button>
+      <a href="/records/new" class="add-btn">Add a Record</a>
+    </button>
+  </div>

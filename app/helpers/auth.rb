@@ -1,4 +1,4 @@
-def current_user
+def cur_user
   if session[:user_id]
     return User.find(session[:user_id])
   else

@@ -22,11 +22,12 @@
 
 <body>
   <header>
+    <span id='title'>activeRecords</span>
       <nav>
          <ul>
-          <% if @cur_user %>
-            <li><a href="#">browse collections</a></li> |
-            <li><a href="#">my profile</a></li> |
+          <% if cur_user %>
+            <li><a href="/users">browse collections</a></li> |
+            <li><a href="/users/<%= cur_user.id %>">my profile</a></li> |
             <li><a href="/logout">logout</a></li>
           <% else %>
             <li><a href="/">Login or SignUp</a></li>

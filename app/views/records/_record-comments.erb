@@ -1,0 +1,25 @@
+<% if cur_user %>
+  <button>
+    <a href="/records/<%= @record.id %>/comments/new" class="add-comment-btn">Add a comment</a>
+  </button>
+ <% end %> 
+
+
+<% @comments.each do |comment| %>
+<p>
+  <%= comment.find_author(comment.user_id) %> says...<br>
+  <%= comment.body %>
+  <br>
+  <% if cur_user.username == comment.find_author(comment.user_id) %>
+     <button>
+       <a href="/comments/<%= comment.id %>/edit" class="edit-comment-btn">Edit comment</a>
+     </button>
+
+     <button>
+       <a href="/comments/<%= comment.id %>/delete" class="delete-comment-btn">Delete comment</a>
+     </button>
+
+  <% end %>
+  <br>
+</p> 
+<% end %>

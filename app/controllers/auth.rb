@@ -10,7 +10,7 @@ post '/login' do
   @cur_user = User.find_by username: params[:name]
   if @cur_user && @cur_user.authenticate(params[:password])
     session[:user_id] = @cur_user.id
-    redirect "/users/#{@cur_user.id}"
+    redirect "/users"
   else
     [404, 'name or password incorrect']
   end
@@ -22,7 +22,7 @@ post '/create' do
 
   if user.save
     session[:user_id] = user.id
-    redirect "/users/#{user.id}"
+    redirect "/users"
   else
     [403, 'client error']
     redirect '/signup'

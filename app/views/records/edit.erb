@@ -1,0 +1,16 @@
+<form action="/records/<%= @record.id %>/edit" method="POST" id="record-edit-form">
+  <input type="hidden" name="_method" value="PUT">
+
+  Album Title: <input type="text" name="record[albumtitle]" value="<%= @record.albumtitle %>">
+  <br><br>
+  Artist: <input type="text" name="record[artist]" value="<%= @record.artist %>">
+  <br><br>
+  Genre: <input type="text" name="record[genre]" 
+  value="<%= @record.genre %>"><br><br>
+  Year: <input type="text" name="record[releaseyear]" value="<%= @record.releaseyear %>"><br><br>
+
+  Your Opinion:<br>
+  <textarea rows="4" cols="50" name="record[owneropinion]" value = "" form="record-edit-form"><%= @record.owneropinion %></textarea><br><br>
+
+  <input class="form-edit-btn" type='submit' value='Edit Record'>
+</form>

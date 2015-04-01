@@ -1,0 +1,49 @@
+
+
+<div class='record-info'>
+  <h2>Album Info</h2>
+  <p>Album Title: <%= @record.albumtitle %></p> 
+  <p>Album Artist: <%= @record.artist %></p> 
+  <p>Album Genre: <%= @record.genre %></p> 
+  <p>Released: <%= @record.releaseyear %></p>
+
+<div id="track-list">
+
+  <ol id="all-tracks">
+    <p>
+      Track List:
+
+      <% if cur_user.username == @owner %>
+         <button>
+           <a href="/records/<%= @record.id %>/tracks/new" class="add-track-btn">add a track</a>
+         </button>
+      <% end %>
+
+    </p>
+    <% @tracks.each do |track| %>
+      <li><%= track.title %></li>
+    <% end %>
+  </ol>
+
+</div>
+
+  <p>
+    <%= @owner %>'s' opinon on this record:<br>
+    <%= @record.owneropinion %>
+  </p> 
+
+  <% if cur_user.username == @owner %>
+     <button>
+       <a href="/records/<%= @record.id %>/edit" class="edit-record-btn">Edit this record</a>
+     </button>
+  <% end %>
+
+</div>
+
+<hr>
+
+<div class='record-comments'>
+  <h2>Comments</h2>
+<%= erb :'/records/_record-comments' %>
+
+</div>
